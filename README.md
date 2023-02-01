@@ -1,2 +1,0 @@
-# New-Dashboard
-#With authentication
