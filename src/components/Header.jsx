@@ -6,13 +6,12 @@ import { BsAlarm, BsFillPersonPlusFill } from "react-icons/bs";
 const Header = () => {
   //const [auth, setAuth] = useState(false);
 
-  //window.location.href="/" ? setAuth(true) : setAuth(false);
+  //window.location.href="/dashboard" ? setAuth(true) : setAuth(false);
 
   return (
     <div className="">
       <div className="w-full h-12 px-5 py-1 bg-slate-200 flex justify-between">
-        <Link className="mt-2 font-bold text-lg hover:scale-110">OLOSKO</Link>
-
+        <Link to='/' className="mt-2 font-bold text-lg hover:scale-110">OLOSKO</Link>
         <div className="flex gap-2">
           <Link
             className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"

@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     alert(`Logged in using ${email}`);
     console.log(email, pass);
-    navigate("/");
+    navigate("/dashboard");
   };
   const handleClick = () => {
     alert(`Under Construction, Use Email`);
