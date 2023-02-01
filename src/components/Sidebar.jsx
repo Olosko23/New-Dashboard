@@ -90,7 +90,7 @@ const Sidebar = () => {
           ))
         }
       </div>
-      <div className="flex flex-col gap-2 rounded-md shadow-md w-4/5 px-2 py-2">
+      <div className="flex flex-col gap-2 rounded-md shadow-md w-4/5 px-2 py-2 mb-10">
         <h2 className="font-semibold text-xl grid place-items-center"><span className="flex gap-1"><span className="mt-1"><FiSettings size={20}/></span>Settings</span></h2>
         {
           settings.map(({id,title,link}) =>(
