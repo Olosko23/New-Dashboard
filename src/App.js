@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Recovery from './pages/Recovery';
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/recovery" element={<Recovery />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,32 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
-import {BsFillPersonPlusFill} from 'react-icons/bs';
+import { BsAlarm, BsFillPersonPlusFill } from "react-icons/bs";
 
 const Header = () => {
+  const [auth, setAuth] = useState(false);
+
+  window.location.href="/" ? setAuth(true) : setAuth(false);
+  
   return (
     <div className="">
       <div className="w-full h-12 px-5 py-1 bg-slate-200 flex justify-between">
-        <Link className="mt-2 font-bold text-lg hover:scale-110" to="/">
-          OLOSKO
-        </Link>
-        <div className="flex gap-2">
-          <Link
-            className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
-            to="/login"
-          > <span className="flex gap-2">
-            <FaSignInAlt size={20} /> Login
-          </span>
-          </Link>
-          <Link
-            className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
-            to="/register"
-          > <span className="flex gap-2">
-            <BsFillPersonPlusFill size={20} />
-            Register
-          </span>
-          </Link>
-        </div>
+        <Link className="mt-2 font-bold text-lg hover:scale-110">OLOSKO</Link>
+        {auth ? (
+          <div className="flex gap-2">
+            <Link
+              className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
+              to="/login"
+            >
+              {" "}
+              <span className="flex gap-2">
+                <FaSignInAlt size={20} /> Login
+              </span>
+            </Link>
+            <Link
+              className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
+              to="/register"
+            >
+              {" "}
+              <span className="flex gap-2">
+                <BsFillPersonPlusFill size={20} />
+                Register
+              </span>
+            </Link>
+          </div>
+        ) : (
+          <div className="flex gap-2">
+            <Link className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold">
+              {" "}
+              <span className="flex gap-2">
+                <FaSignInAlt size={20} /> Logout
+              </span>
+            </Link>
+            <Link
+              className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
+              to="/register"
+            >
+              {" "}
+              <span className="flex gap-2">
+                <BsAlarm size={20} />
+                Notifications
+              </span>
+            </Link>
+          </div>
+        )}
       </div>
       <Outlet />
     </div>
