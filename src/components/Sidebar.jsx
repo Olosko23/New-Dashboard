@@ -6,6 +6,67 @@ import {AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 
 const Sidebar = () => {
+  const menu = [
+    {
+      id: 1,
+      title: "Home",
+      link: "/"
+    },
+    {
+      id: 2,
+      title: "Indices",
+      link: "/"
+    },
+    {
+      id: 3,
+      title: "Currency",
+      link: "/"
+    },
+    {
+      id: 4,
+      title: "Crypto",
+      link: "/"
+    },
+    {
+      id: 5,
+      title: "ETF",
+      link: "/"
+    },
+  ]
+  const services = [
+    {
+      id:1,
+      title: "Current Market Status",
+      link: '/'
+    },
+    {
+      id:2,
+      title: "Exchange Rates",
+      link: '/'
+    },
+    {
+      id:3,
+      title: "Crypto Analysis",
+      link: '/'
+    },
+  ]
+  const settings = [
+    {
+      id: 1,
+      title: "Contact",
+      link: '/'
+    },
+    {
+      id: 2,
+      title: "Subscription",
+      link: '/'
+    },
+    {
+      id: 3,
+      title: "Theme",
+      link: '/'
+    },
+  ]
   return (
     <div className="h-screen mb-10 py-3 px-1 bg-slate-100 grid place-items-center">
       <div className="flex flex-col gap-2 rounded-md shadow-md w-4/5 px-2 py-2">
@@ -15,23 +76,27 @@ const Sidebar = () => {
       </div>
       <div className="flex flex-col gap-2 rounded-md shadow-md w-4/5 px-2 py-2">
         <h2 className="font-semibold text-xl grid place-items-center"><span className="flex gap-1"><span className="mt-1"><AiOutlineMenu size={20}/></span>Menu</span></h2>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Home</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Indices</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Currency</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Crypto</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>ETF</Link></div>
+        {
+          menu.map(({id,title,link}) =>(
+            <div key={id} className="cursor-pointer font-medium hover:font-semibold"> <Link to={link}>{title}</Link></div>
+          ))
+        }
       </div>
       <div className="flex flex-col gap-2 rounded-md shadow-md w-4/5 px-2 py-2">
         <h2 className="font-semibold text-xl grid place-items-center"><span className="flex gap-1"><span className="mt-1"><FaServicestack size={20}/></span>Services</span></h2>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Current Market Status</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Exchange Rates</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Crypto Analysis</Link></div>
+        {
+          services.map(({id,title,link}) =>(
+            <div key={id} className="cursor-pointer font-medium hover:font-semibold"> <Link to={link}>{title}</Link></div>
+          ))
+        }
       </div>
       <div className="flex flex-col gap-2 rounded-md shadow-md w-4/5 px-2 py-2">
         <h2 className="font-semibold text-xl grid place-items-center"><span className="flex gap-1"><span className="mt-1"><FiSettings size={20}/></span>Settings</span></h2>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Contact</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Subscription</Link></div>
-        <div className="cursor-pointer font-medium hover:font-semibold"> <Link to='/'>Theme</Link></div>
+        {
+          settings.map(({id,title,link}) =>(
+            <div key={id} className="cursor-pointer font-medium hover:font-semibold"> <Link to={link}>{title}</Link></div>
+          ))
+        }
       </div>
     </div>
   )
