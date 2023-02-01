@@ -7,7 +7,6 @@ const Login = () => {
       <div>
         Login Component
       </div>
-      <Footer />
     </div>
   )
 }

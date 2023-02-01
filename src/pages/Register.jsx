@@ -7,7 +7,6 @@ const Register = () => {
       <div>
         Register Component
       </div>
-      <Footer />
     </div>
   )
 }
