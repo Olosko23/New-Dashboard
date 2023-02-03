@@ -6,7 +6,7 @@ import { BsAlarm, BsFillPersonPlusFill } from "react-icons/bs";
 const Header = () => {
   const [auth, setAuth] = useState(false);
 
-  window.location.href = "/dashboard" ? setAuth(true) : setAuth(false);
+  //window.location.href = "/dashboard" ? setAuth(true) : setAuth(false);
 
   return (
     <div className="">

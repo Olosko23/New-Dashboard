@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import {ToastContainer, toast} from 'react-toastify';
 
 const Recovery = () => {
   const [mail, setMail] = useState("");
 
   const navigate = useNavigate();
 
+  const notify  = () =>{
+    toast(`Check ${mail}`);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Check ${mail}`);
-    navigate("/login");
+    //alert(`Check ${mail}`);
+    navigate("/login");    
   };
+
   return (
     <div className="w-full h-screen grid place-items-center">
       <div className="border rounded-md shadow-md py-3 px-3 w-3/4">
@@ -30,9 +36,10 @@ const Recovery = () => {
             Enter the email address you signed up wiht for the account.
             <br /> If it is registered a recovery password will be sent.
           </p>
-          <button className="mb-2 w-full py-1 px-2 bg-slate-400 rounded-md grid place-items-center hover:font-semibold">
+          <button onClick={notify} className="mb-2 w-full py-1 px-2 bg-slate-400 rounded-md grid place-items-center hover:font-semibold">
             Submit
           </button>
+          <ToastContainer />
         </form>
         <p className="text-base">
           Recall Password ?{" "}
