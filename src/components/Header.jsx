@@ -40,7 +40,7 @@ const Header = () => {
           <div className="flex gap-2">
             <Link
               className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
-              to="/login"
+              to="/home"
             >
               {" "}
               <span className="flex gap-2">
@@ -49,7 +49,6 @@ const Header = () => {
             </Link>
             <Link
               className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
-              to="/register"
             >
               {" "}
               <span className="flex gap-2">
