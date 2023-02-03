@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import hero from '../assets/hero.jpg';
 
 const Home = () => {
   return (
     <div className="px-5 py-4 gap-2 mb-24 sm:mb-10">
-      <section className="mb-2 flex h-[300px] sm:h-[500px] bg-[url('../assets/hero.jpg')] bg-cover">
+      <section className="mb-2 flex h-[300px] sm:h-[500px] bg-[url('./hero.jpg')] bg-contain">
         <div className="basis-1/2">HERO</div>
         <div className="hidden sm:flex basis-1/2">HERO</div>
       </section>
