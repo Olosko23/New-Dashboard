@@ -40,6 +40,12 @@ const Recovery = () => {
             <span className="hover:font-semibold">Login</span>
           </Link>
         </p>
+        <p className="text-base">
+          Create an account ?{" "}
+          <Link to="/register">
+            <span className="hover:font-semibold">Register</span>
+          </Link>
+        </p>
       </div>
     </div>
   );
