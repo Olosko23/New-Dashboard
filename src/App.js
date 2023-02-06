@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 export default function App() {
 
@@ -16,7 +17,8 @@ export default function App() {
         <Routes>
           <Route element={<Header />}>
             <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={
+            <ProtectedRoute><Dashboard /></ProtectedRoute>} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/recovery" element={<Recovery />} />
