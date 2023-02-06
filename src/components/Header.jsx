@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
-import { BsAlarm, BsFillPersonPlusFill } from "react-icons/bs";
+import { BsAlarm, BsBriefcase, BsFillPersonPlusFill } from "react-icons/bs";
 import { UserAuth } from "../context/AuthContext";
 
 const Header = () => {
@@ -29,6 +29,12 @@ const Header = () => {
         </Link>
         {user ? (
           <div className="flex gap-2">
+            <Link to="/dashboard" className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold">
+              {" "}
+              <span className="flex gap-2">
+                <BsBriefcase size={20} /> Dashboard
+              </span>
+            </Link>
             <Link className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold">
               {" "}
               <span className="flex gap-2">
