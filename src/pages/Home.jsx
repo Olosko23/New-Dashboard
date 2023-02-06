@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="px-5 py-4 gap-2 mb-24 sm:mb-10">
-      <section className="mb-2 flex h-[300px] sm:h-[500px]">
-        <div className="basis-1/2">HERO</div>
-        <div className="hidden sm:flex basis-1/2">HERO</div>
+    <div className=" gap-2 mb-24 sm:mb-10">
+      <section className="mb-2 flex h-[300px] sm:h-[500px] bg-[url(https://picsum.photos/400)] bg-cover">
+        <div className="basis-2/3 flex flex-col gap-4 mt-64">
+          <div className="font-bold text-3xl sm:text-5xl px-5">Olosko Markets <br /> Insight</div>
+          <div className="max-w-4xl mx-auto text-lg font-semibold leading-4 px-4">Offerring the best curated financial insight with focus on big markets as well as emerging markets as we try to make this sentence as long as possible in a way that it would still make economic sense</div>
+        </div>
+        <div className="hidden sm:flex basis-1/3"></div>
       </section>
-      <section className="max-w-4xl mx-auto mb-2 py-2">
+      <section className=" px-5 max-w-4xl mx-auto mb-2 py-4">
         <h2 className="grid place-items-center mb-2 font-semibold text-xl sm:text-3xl">
           About Us
         </h2>
@@ -27,7 +30,7 @@ const Home = () => {
           </button>
         </div>
       </section>
-      <section className="mb-2 py-2">
+      <section className="mb-2 px-5 py-4">
         <h2 className="grid place-items-center mb-2 font-semibold text-xl sm:text-3xl">
           Services
         </h2>
@@ -53,8 +56,8 @@ const Home = () => {
         </div>
       </section>
       <section
-        name="newsletter"
-        className="mb-2 py-2 max-w-4xl mx-auto border-t border-b"
+        name="newsletter" 
+        className=" px-5 py-4 mb-2 max-w-4xl mx-auto border-t border-b"
       >
         <h2 className="text-xl font-semibold grid place-items-center">
           Subscribe to our newsletter

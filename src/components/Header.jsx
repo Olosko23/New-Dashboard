@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
-import { BsFillPersonPlusFill } from "react-icons/bs";
+import { BsAlarm, BsFillPersonPlusFill } from "react-icons/bs";
 import { UserAuth } from "../context/AuthContext";
 
 const Header = () => {
@@ -32,7 +32,7 @@ const Header = () => {
             <Link className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold">
               {" "}
               <span className="flex gap-2">
-                <FaSignInAlt size={20} /> Notifications
+                <BsAlarm size={20} /> Notifications
               </span>
             </Link>
             <Link onClick={handleLogout} className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold">
