@@ -8,11 +8,13 @@ import Footer from './components/Footer';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './pages/ProtectedRoute';
+import {AuthContextProvider} from './context/AuthContext';
 
 export default function App() {
 
   return (
     <div className="">
+      <AuthContextProvider>
       <BrowserRouter>
         <Routes>
           <Route element={<Header />}>
@@ -25,6 +27,7 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </AuthContextProvider>
       <Footer />
     </div>
   )
