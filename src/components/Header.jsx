@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
-import { BsAlarm, BsFillPersonPlusFill } from "react-icons/bs";
+import { BsFillPersonPlusFill } from "react-icons/bs";
 
 const Header = () => {
-  const [auth, setAuth] = useState(false);
-
-  //window.location.href = "/dashboard" ? setAuth(true) : setAuth(false);
 
   return (
     <div className="">
@@ -14,7 +11,6 @@ const Header = () => {
         <Link to="/" className="mt-2 font-bold text-lg hover:scale-110">
           OLOSKO
         </Link>
-        {auth ? (
           <div className="flex gap-2">
             <Link
               className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
@@ -36,28 +32,6 @@ const Header = () => {
               </span>
             </Link>
           </div>
-        ) : (
-          <div className="flex gap-2">
-            <Link
-              className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
-              to="/home"
-            >
-              {" "}
-              <span className="flex gap-2">
-                <FaSignInAlt size={20} /> Logout
-              </span>
-            </Link>
-            <Link
-              className="py-2 px-4 rounded-md bg-neutral-400 cursor-pointer hover:font-semibold"
-            >
-              {" "}
-              <span className="flex gap-2">
-                <BsAlarm size={20} />
-                Notifications
-              </span>
-            </Link>
-          </div>
-        )}
       </div>
       <Outlet />
     </div>

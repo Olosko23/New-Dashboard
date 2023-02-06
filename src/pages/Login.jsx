@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
+import {UserAuth} from '../context/AuthContext';
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPassword] = useState("");
 
+  const {signIn} = UserAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    alert(`Logged in using ${email}`);
-    console.log(email, pass);
-    navigate("/dashboard");
+    try {
+      await signIn(email, password);
+      console.log("Logged in using", email, password);
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error.message);
+      alert(error.message);
+    }
   };
   const handleClick = () => {
     alert(`Under Construction, Use Email`);
@@ -39,7 +46,7 @@ const Login = () => {
               placeholder="Enter Your Password"
               minLength={8}
               required
-              onChange={(e) => setPass(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="mb-2 grid place-items-center">

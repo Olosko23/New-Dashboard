@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="px-5 py-4 gap-2 mb-24 sm:mb-10">
-      <section className="mb-2 flex h-[300px] sm:h-[500px] bg-[url('./hero.jpg')] bg-contain">
+      <section className="mb-2 flex h-[300px] sm:h-[500px]">
         <div className="basis-1/2">HERO</div>
         <div className="hidden sm:flex basis-1/2">HERO</div>
       </section>

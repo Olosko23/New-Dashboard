@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
+import {UserAuth} from '../context/AuthContext';
 
 const Register = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+  const {createUser} = UserAuth();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Welcome ${name} Login using ${email}`);
-    console.log(name, email, pass);
-    navigate("/login");
+    try {
+      await createUser(email, password);
+      console.log(email,password)
+      navigate("/login");
+    } catch (error) {
+      alert(error.message);
+    }
   };
   const handleClick = () => {
     alert(`Under Construction, Use Email`);
@@ -31,14 +36,6 @@ const Register = () => {
           <div className="flex flex-col mb-2 gap-2">
             <input
               className="py-2 px-4 border-b"
-              type="text"
-              placeholder="Enter Your Username"
-              minLength={6}
-              required
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              className="py-2 px-4 border-b"
               type="email"
               placeholder="Enter Your Email"
               required
@@ -48,9 +45,9 @@ const Register = () => {
               className="py-2 px-4 border-b"
               type="password"
               placeholder="Enter Your Password"
-              minLength={8}
+              minLength={6}
               required
-              onChange={(e) => setPass(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="mb-2 grid place-items-center">
