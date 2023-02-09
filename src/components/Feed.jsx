@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import dotenv from 'dotenv';
 
 const Feed = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  dotenv.config();
-
-  const url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${process.env.REACT_APP_API_KEY}`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=f5724406ac6d493c9395e5b1aaf4f5d6`;
 
   useEffect(() => {
     setLoading(true);
@@ -23,10 +20,7 @@ const Feed = () => {
   return (
     <div className="gap-2 py-4 px-4 mb-10">
       {loading ? (
-        <div>
-          <span>Loading....</span>
-          <span>Loading....</span>
-          <span>Loading....</span>
+        <div className="flex flex-col gap-4">
           <span>Loading....</span>
           <span>Loading....</span>
           <span>Loading....</span>
@@ -37,7 +31,7 @@ const Feed = () => {
             <ul className="w-full h-fit">
               {items.map((item) => (
                 <li key={item.id} className="rounded-md border shadow-md px-1 py-1">
-                  <div>
+                  <div className="w-fit h-fit">
                     <div>
                       <img src={item.urlToImage} alt={item.title} />
                     </div>
