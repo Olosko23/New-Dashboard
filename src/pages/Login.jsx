@@ -7,6 +7,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const {signIn} = UserAuth();
   const navigate = useNavigate();
@@ -20,7 +21,8 @@ const Login = () => {
       navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
-      alert(error.message);
+      setError(true);
+      //alert(error.message)
       setLoading(false)
     }
   };
@@ -57,8 +59,11 @@ const Login = () => {
               className="w-full py-1 px-2 bg-slate-400 rounded-md grid place-items-center hover:font-semibold"
               type="submit"
             >
-              {loading? Please wait loggin in... : Login}
+              {loading? <span>Please wait logging in...</span> : <span>Login</span>}
             </button>
+            <div>
+              {error ? <span className="text-red-400 text-center">{error.message}</span>: null}
+            </div>
           </div>
           <p className="font-medium text-base">
             New User?{" "}
