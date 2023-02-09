@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import dotenv from 'dotenv';
 
 const Feed = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=f5724406ac6d493c9395e5b1aaf4f5d6`;
+  dotenv.config();
+
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${process.env.REACT_APP_API_KEY}`;
 
   useEffect(() => {
     setLoading(true);
