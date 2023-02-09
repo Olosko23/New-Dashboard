@@ -1,32 +1,69 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
 const Feed = () => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=f5724406ac6d493c9395e5b1aaf4f5d6`;
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setItems(data.articles)
+        console.log(data.articles)
+        setLoading(false)
+      });
+  }, [url]);
+
   return (
     <div className="gap-2 py-4 px-4 mb-10">
-      <div className="bg-gray-200 flex gap-2 justify-evenly px-3 py-2">
-        <div>Summary</div>
-        <div>Summary</div>
-        <div>Summary</div>
-      </div>
-      <div className="mt-1 pt-1 mx-auto grid place-items-center gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        <div className="w-3/4 h-3/4 border px-2 py-1 rounded-md shadow-md">Stock Market</div>
-        <div className="w-3/4 h-3/4 border px-2 py-1 rounded-md shadow-md">Crypto</div>
-        <div className="w-3/4 h-3/4 border px-2 py-1 rounded-md shadow-md">ETF</div>
-        <div className="w-3/4 h-3/4 border px-2 py-1 rounded-md shadow-md">Foreign Exchange</div>
-        <div className="w-3/4 h-3/4 border px-2 py-1 rounded-md shadow-md">Indices</div>
-        <div className="w-3/4 h-3/4 border px-2 py-1 rounded-md shadow-md">Money Markets</div>
-      </div>
-      <div className="mb-12">
-        <div>Latest from the markets</div>
+      {loading ? (
         <div>
-          <div>Title</div>
-          <img src="/" alt="info" />
-          <div>Desc</div>
-          <div>Link</div>
+          <span>Loading....</span>
+          <span>Loading....</span>
+          <span>Loading....</span>
+          <span>Loading....</span>
+          <span>Loading....</span>
+          <span>Loading....</span>
         </div>
-      </div>
+      ) : (
+        <div className="py-3 px-2">
+          {items > 0 && (
+            <ul className="w-full h-fit">
+              {items.map((item) => (
+                <li key={item.id} className="rounded-md border shadow-md px-1 py-1">
+                  <div>
+                    <div>
+                      <img src={item.urlToImage} alt={item.title} />
+                    </div>
+                    <div>
+                      <div>
+                        <span>{item.souce.name}</span>
+                      </div>
+                      <div>
+                        <h2>{item.title}</h2>
+                      </div>
+                      <div>
+                        <p>{item.description}</p>
+                      </div>
+                      <div>
+                        <small>
+                          {" "}
+                          Published at: {item.publishedAt.toLocal()}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Feed
+export default Feed;
