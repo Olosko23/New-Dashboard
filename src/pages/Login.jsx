@@ -6,6 +6,7 @@ import {UserAuth} from '../context/AuthContext';
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const {signIn} = UserAuth();
   const navigate = useNavigate();
@@ -13,12 +14,14 @@ const Login = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
+      setLoading(true)
       await signIn(email, password);
       console.log("Logged in using", email, password);
       navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
       alert(error.message);
+      setLoading(false)
     }
   };
   const handleClick = () => {
@@ -54,7 +57,7 @@ const Login = () => {
               className="w-full py-1 px-2 bg-slate-400 rounded-md grid place-items-center hover:font-semibold"
               type="submit"
             >
-              Login
+              {loading? Please wait loggin in... : Login}
             </button>
           </div>
           <p className="font-medium text-base">
