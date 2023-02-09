@@ -13,61 +13,61 @@ const Sidebar = () => {
     {
       id: 1,
       title: "Home",
-      link: "/"
+      link: "/dashboard"
     },
     {
       id: 2,
       title: "Indices",
-      link: "/"
+      link: "/dashboard"
     },
     {
       id: 3,
       title: "Currency",
-      link: "/"
+      link: "/dashboard"
     },
     {
       id: 4,
       title: "Crypto",
-      link: "/"
+      link: "/dashboard"
     },
     {
       id: 5,
       title: "ETF",
-      link: "/"
+      link: "/dashboard"
     },
   ]
   const services = [
     {
       id:1,
       title: "Current Market Status",
-      link: '/'
+      link: '/dashboard'
     },
     {
       id:2,
       title: "Exchange Rates",
-      link: '/'
+      link: '/dashboard'
     },
     {
       id:3,
       title: "Crypto Analysis",
-      link: '/'
+      link: '/dashboard'
     },
   ]
   const settings = [
     {
       id: 1,
       title: "Contact",
-      link: '/'
+      link: '/dashboard'
     },
     {
       id: 2,
       title: "Subscription",
-      link: '/'
+      link: '/dashboard'
     },
     {
       id: 3,
       title: "Theme",
-      link: '/'
+      link: '/dashboard'
     },
   ]
   return (
