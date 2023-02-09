@@ -3,7 +3,7 @@ import React from 'react'
 const Feed = () => {
   return (
     <div className="gap-2 py-4 px-4 mb-10">
-      <div className="bg-gray-200 flex gap-2 justify-evenly px-2 py-2">
+      <div className="bg-gray-200 flex gap-2 justify-evenly px-3 py-2">
         <div>Summary</div>
         <div>Summary</div>
         <div>Summary</div>
