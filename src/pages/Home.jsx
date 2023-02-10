@@ -37,12 +37,12 @@ const Home = () => {
         <div className="max-w-4xl mx-auto grid gap-5 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
           <div className="cursor-pointer hover:scale-105 rounded-md shadow-md py-5 px-5">
             <h3 className="font-semibold text-xl sm:text-2xl">
-              Stock Market Insight
+              Business
             </h3>
           </div>
           <div className="cursor-pointer hover:scale-105 rounded-md shadow-md py-5 px-5">
             <h3 className="font-semibold text-xl sm:text-2xl">
-              Foreign Exchange Rates
+            Health
             </h3>
           </div>
           <div className="cursor-pointer hover:scale-105 rounded-md shadow-md py-5 px-5">
@@ -50,7 +50,7 @@ const Home = () => {
           </div>
           <div className="cursor-pointer hover:scale-105 rounded-md shadow-md py-5 px-5">
             <h3 className="font-semibold text-xl sm:text-2xl">
-              Money Markets, Indices & Futures
+              Science and Technology
             </h3>
           </div>
         </div>
