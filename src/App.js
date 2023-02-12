@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Recovery from './pages/Recovery';
 import Dashboard from './pages/Dashboard';
+import NoPage from './pages/NoPage';
 import ProtectedRoute from './pages/ProtectedRoute';
 import {AuthContextProvider} from './context/AuthContext';
 
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/recovery" element={<Recovery />} />
+            <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
