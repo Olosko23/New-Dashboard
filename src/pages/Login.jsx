@@ -22,7 +22,7 @@ const Login = () => {
     } catch (error) {
       console.log(error.message);
       setError(true);
-      //alert(error.message)
+      alert(error.message)
       setLoading(false)
     }
   };
